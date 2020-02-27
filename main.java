@@ -13,10 +13,14 @@ import java.io.FileWriter;
 public class main{
     public static void main(String[] args){
         Calculadora calculadora = new Calculadora();
+        Factory factory = new Factory();
+        Scanner scan = new Scanner(System.in);
         //se tendra la operacion que tenga el archivo
         ArrayList<String> data = new ArrayList<String>();
+        System.out.println("Ingrese el numero del tipo de stack que desea utilizar: \n1. Lista circular\n2. Doblemente encadenada\n3. Simplemente encadenada\n4.Array List\n5. Vector\n6. Lista")
+        String opcion = scan.nextLine();
         //stack que se utiliza para manejar los datos
-        PilaVectores<String> proceso = new PilaVectores<String>();
+        Stack<String> proceso = new factory.getStack();
         File f = new File("datos.txt");
         Scanner s = null;
         String op = "";
